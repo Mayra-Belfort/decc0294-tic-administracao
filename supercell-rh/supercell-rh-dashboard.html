@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Supercell • Simulação de Dados de RH — 100 Colaboradores</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#0d0d0f;--card:#1a1a1e;--card2:#222228;--yellow:#FFD500;--yellow2:#ffea70;--text:#f5f5f4;--muted:#a1a1aa;--border:#2e2e35;--green:#22c55e;--red:#ef4444;--blue:#3b82f6;--purple:#a855f7;--cyan:#06b6d4}
+body{font-family:'Segoe UI',Inter,Arial,sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
+header{background:linear-gradient(135deg,#111 0%,#1c1c05 60%,#2a2300 100%);border-bottom:3px solid var(--yellow);padding:28px 24px;position:sticky;top:0;z-index:50}
+.hwrap{max-width:1280px;margin:0 auto;display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+.logo{width:58px;height:58px;background:var(--yellow);border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:2rem;font-weight:900;color:#111;box-shadow:0 4px 24px rgba(255,213,0,.4)}
+h1{font-size:1.6rem;font-weight:800}h1 span{color:var(--yellow)}
+.sub{color:var(--muted);font-size:.92rem;margin-top:4px}
+.badge{display:inline-block;background:rgba(255,213,0,.12);border:1px solid rgba(255,213,0,.4);color:var(--yellow);padding:4px 12px;border-radius:100px;font-size:.78rem;font-weight:600;margin-top:8px}
+.hbtns{margin-left:auto;display:flex;gap:10px;flex-wrap:wrap}
+button,.btn{background:var(--yellow);color:#111;border:none;padding:11px 20px;border-radius:10px;font-weight:700;cursor:pointer;font-size:.9rem;transition:.2s;text-decoration:none;display:inline-flex;align-items:center;gap:6px}
+button:hover,.btn:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(255,213,0,.35)}
+.btn-ghost{background:var(--card2);color:var(--text);border:1px solid var(--border)}
+main{max-width:1280px;margin:0 auto;padding:28px 24px 60px}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:14px;margin-bottom:22px}
+.kpi{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:18px;position:relative;overflow:hidden}
+.kpi::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--yellow)}
+.kpi small{color:var(--muted);font-size:.75rem;text-transform:uppercase;letter-spacing:.05em;font-weight:600}
+.kpi .v{font-size:1.7rem;font-weight:900;margin:6px 0 2px}.kpi .d{font-size:.8rem;color:var(--muted)}
+.kpi .v.y{color:var(--yellow)}.kpi .v.g{color:var(--green)}.kpi .v.r{color:var(--red)}.kpi .v.b{color:var(--blue)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:14px}
+@media(max-width:900px){.grid2,.grid3{grid-template-columns:1fr}}
+.card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px}
+.card h3{font-size:1rem;margin-bottom:4px}.card p.desc{color:var(--muted);font-size:.82rem;margin-bottom:14px}
+canvas{max-height:280px}
+.filters{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:14px;align-items:center}
+select,input[type=text]{background:var(--card2);border:1px solid var(--border);color:var(--text);padding:10px 14px;border-radius:10px;font-size:.88rem;font-family:inherit}
+table{width:100%;border-collapse:collapse;font-size:.82rem}
+th{background:var(--card2);color:var(--yellow);text-align:left;padding:10px 8px;position:sticky;top:0;font-size:.72rem;text-transform:uppercase;letter-spacing:.04em;white-space:nowrap}
+td{padding:9px 8px;border-bottom:1px solid var(--border);white-space:nowrap}
+tr:hover td{background:rgba(255,213,0,.05)}
+.twrap{overflow:auto;max-height:520px;border:1px solid var(--border);border-radius:12px}
+.pill{padding:3px 10px;border-radius:100px;font-size:.75rem;font-weight:700}
+.p-ativo{background:rgba(34,197,94,.15);color:#4ade80}.p-desl{background:rgba(239,68,68,.15);color:#f87171}
+.p-prom{background:rgba(34,197,94,.15);color:#4ade80}.p-neut{background:rgba(234,179,8,.15);color:#facc15}.p-detr{background:rgba(239,68,68,.15);color:#f87171}
+.stars{color:var(--yellow);letter-spacing:1px}
+.insights{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px;margin:18px 0}
+.ins{background:linear-gradient(135deg,rgba(255,213,0,.08),rgba(255,213,0,.02));border:1px solid rgba(255,213,0,.25);border-radius:14px;padding:18px;font-size:.88rem;line-height:1.6}
+.ins b{color:var(--yellow)}
+footer{color:var(--muted);font-size:.8rem;text-align:center;padding:20px;line-height:1.7}
+.note{background:var(--card);border:1px dashed var(--border);border-radius:12px;padding:14px 18px;font-size:.82rem;color:var(--muted);margin-bottom:18px;line-height:1.6}
+</style>
+</head>
+<body>
+<header><div class="hwrap">
+<div class="logo">S</div>
+<div><h1>SUPERCELL <span>• People Analytics</span></h1>
+<div class="sub">Simulação de RH — Helsinki + escritórios globais • Clash of Clans • Brawl Stars • Clash Royale • Hay Day • Squad Busters</div>
+<div class="badge">⚠️ DADOS 100% FICTÍCIOS PARA FINS EDUCACIONAIS — não são dados reais da Supercell</div></div>
+<div class="hbtns"><button onclick="exportCSV()">⬇ Exportar CSV</button><button class="btn-ghost btn" onclick="regenerar()">🎲 Nova simulação</button></div>
+</div></header>
+<main>
+<div class="note">📋 <b>Metodologia da simulação:</b> 100 colaboradores distribuídos em 8 departamentos e 7 Cells (times autônomos, modelo real da Supercell). Salários em €/mês (padrão Finlândia). Turnover proposital de ~18%, correlação entre satisfação baixa → desligamento e faltas altas → desempenho baixo. Use os filtros para explorar e exporte o CSV para Excel / Power BI.</div>
+<div class="kpis" id="kpis"></div>
+<div class="grid3">
+<div class="card"><h3>👥 Headcount por Departamento</h3><p class="desc">Engenharia é o maior time, como numa game studio</p><canvas id="chDept"></canvas></div>
+<div class="card"><h3>⭐ Desempenho (avaliação 1–5)</h3><p class="desc">Distribuição das avaliações anuais</p><canvas id="chPerf"></canvas></div>
+<div class="card"><h3>😊 eNPS — Clima</h3><p class="desc">Promotores (9-10) vs Neutros (7-8) vs Detratores (0-6)</p><canvas id="chEnps"></canvas></div>
+</div>
+<div class="grid2">
+<div class="card"><h3>💶 Salário médio por Departamento (€/mês)</h3><p class="desc">Faixas inspiradas no mercado de games na Finlândia</p><canvas id="chSal"></canvas></div>
+<div class="card"><h3>📉 Turnover & Absenteísmo</h3><p class="desc">Desligados por departamento + média de faltas/ano</p><canvas id="chTurn"></canvas></div>
+</div>
+<div class="grid2">
+<div class="card"><h3>📊 Satisfação × Desempenho</h3><p class="desc">Cada ponto = 1 colaborador (tamanho = salário)</p><canvas id="chScatter"></canvas></div>
+<div class="card"><h3>🎓 Horas de Treinamento por Nível</h3><p class="desc">Investimento em desenvolvimento</p><canvas id="chTrain"></canvas></div>
+</div>
+<div class="insights" id="insights"></div>
+<div class="card">
+<h3>🔍 Base de dados — 100 colaboradores simulados</h3>
+<p class="desc">Busque, filtre por departamento / status / cell e clique em Exportar CSV</p>
+<div class="filters">
+<input type="text" id="fSearch" placeholder="🔎 Buscar nome, cargo, cell..." oninput="renderTable()" style="flex:1;min-width:200px">
+<select id="fDept" onchange="renderTable()"><option value="">Todos departamentos</option></select>
+<select id="fStatus" onchange="renderTable()"><option value="">Ativo + Desligado</option><option>Ativo</option><option>Desligado</option></select>
+<select id="fCell" onchange="renderTable()"><option value="">Todas as cells</option></select>
+</div>
+<div class="twrap"><table><thead><tr>
+<th>ID</th><th>Nome</th><th>Departamento</th><th>Cargo</th><th>Cell</th><th>Salário €</th><th>Admissão</th><th>Status</th><th>Faltas</th><th>Trein.h</th><th>Desemp.</th><th>Promoção</th><th>Satisf.</th><th>eNPS</th>
+</tr></thead><tbody id="tbody"></tbody></table></div>
+</div>
+<footer>Simulação educacional • Empresa: Supercell Oy (Helsinque, Finlândia — ~500 funcionários reais) • Moeda: Euro (€) • Gerado em <span id="hoje"></span> • Feito para aulas de RH / People Analytics</footer>
+</main>
+<script>
+let SEED = 202602;
+function rnd(){SEED=(SEED*9301+49297)%233280;return SEED/233280;}
+function ri(a,b){return Math.floor(rnd()*(b-a+1))+a;}
+function pick(arr){return arr[Math.floor(rnd()*arr.length)];}
+const FIRST=["Aino","Elias","Sofia","Aleksi","Emilia","Onni","Aada","Leevi","Venla","Niilo","Aamu","Eino","Ilona","Otto","Helmi","Väinö","Sanni","Eetu","Iida","Armas","Liam","Olivia","Noah","Emma","Lucas","Mia","Felix","Anna","Hugo","Sara","Daniel","Julia","Marcus","Elena","Tommi","Laura","Jussi","Katja","Mikko","Petra","Antti","Veera","Sami","Noora","Juhani","Essi","Olli","Riina","Pekka","Kaisa"];
+const LAST=["Korhonen","Virtanen","Mäkinen","Nieminen","Laine","Heikkinen","Koskinen","Järvinen","Lehtonen","Rantanen","Smith","Johnson","Chen","Garcia","Kim","Novak","Silva","Tanaka","Müller","Rossi","Lindqvist","Johansson","Andersen","Dubois","Moreau","Kowalski","Silva","Costa","Santos","Nakamura"];
+const DEPTS=[
+{d:"Engenharia",w:.25,cargos:[["Game Developer Pleno",6500,9000],["Senior Game Engineer",8500,12000],["Backend Engineer",7000,10500],["Junior Developer",4800,6500]],cor:"#FFD500"},
+{d:"Game Design",w:.20,cargos:[["Game Designer",5500,8000],["Senior Game Designer",7500,9800],["Level Designer",5200,7500],["Economy Designer",6000,8800]],cor:"#3b82f6"},
+{d:"Arte & Animação",w:.15,cargos:[["2D Artist",5000,7200],["3D Artist",5200,7800],["Senior VFX Artist",7000,9000],["Animator",5000,7500]],cor:"#a855f7"},
+{d:"Data & Analytics",w:.10,cargos:[["Data Analyst",6000,8500],["Data Scientist",7000,10500],["BI Specialist",5800,8000]],cor:"#06b6d4"},
+{d:"Produto",w:.10,cargos:[["Product Manager",6500,9500],["Producer",6000,9000],["Lead Producer",8500,11000]],cor:"#22c55e"},
+{d:"Marketing & Community",w:.08,cargos:[["Community Manager",4500,6500],["UA Specialist",5000,7500],["Brand Manager",6000,8500]],cor:"#f97316"},
+{d:"QA & Suporte",w:.07,cargos:[["QA Analyst",3500,5000],["QA Lead",4800,6200],["Player Support",3400,4800]],cor:"#ef4444"},
+{d:"People, RH & Admin",w:.05,cargos:[["People Partner",5000,7500],["Recruiter",4500,6500],["Finance Analyst",5500,8000]],cor:"#94a3b8"}];
+const CELLS=["Clash of Clans","Brawl Stars","Clash Royale","Hay Day","Squad Busters","Boom Beach","New Games"];
+let DATA=[];
+function genData(){
+SEED = Math.floor(Math.random()*900000)+1000; DATA=[];
+for(let i=1;i<=100;i++){
+let r=rnd(),acc=0,dept=DEPTS[0];
+for(const d of DEPTS){acc+=d.w;if(r<=acc){dept=d;break;}}
+const [cargo,smin,smax]=pick(dept.cargos);
+const salario=Math.round((smin+rnd()*(smax-smin))/50)*50;
+const ano=ri(2015,2025),mes=ri(1,12),dia=ri(1,28);
+const adm=`${String(dia).padStart(2,'0')}/${String(mes).padStart(2,'0')}/${ano}`;
+// satisfação 1-10 com distribuição realista
+let sat;const rs=rnd();if(rs<.15)sat=ri(1,5);else if(rs<.4)sat=ri(6,7);else if(rs<.75)sat=ri(8,9);else sat=10;
+// desempenho correlacionado com satisfação + ruído
+let perf=Math.round(sat/2+rnd()*1.5-0.3);perf=Math.max(1,Math.min(5,perf));
+if(rnd()<.08)perf=ri(1,2); // low performers
+// desligado mais provável se sat baixa / perf baixo
+let pDesl=sat<=5?0.45:(sat<=6?0.25:(perf<=2?0.3:0.08));
+const status=rnd()<pDesl?"Desligado":"Ativo";
+// faltas correlacionadas
+let faltas=status==="Desligado"?ri(3,14):(sat<=5?ri(2,10):ri(0,5));
+const trein=perf>=4?ri(25,60):ri(5,35);
+const promo=(perf>=4&&status==="Ativo"&&rnd()<.4)?"Sim":"Não";
+const enps=sat>=9?"Promotor":(sat>=7?"Neutro":"Detrator");
+DATA.push({id:"SC-"+String(i).padStart(3,'0'),nome:pick(FIRST)+" "+pick(LAST),dept:dept.d,cargo,cell:pick(CELLS),salario,adm,status,faltas,trein,perf,promo,sat,enps,cor:dept.cor});
+}
+}
+function fmt(n){return n.toLocaleString('pt-BR');}
+function medias(){const a=DATA.filter(d=>d.status==="Ativo");
+return{sal:Math.round(DATA.reduce((s,d)=>s+d.salario,0)/100),
+turn:DATA.filter(d=>d.status==="Desligado").length,
+falt:(DATA.reduce((s,d)=>s+d.faltas,0)/100).toFixed(1),
+sat:(DATA.reduce((s,d)=>s+d.sat,0)/100).toFixed(1),
+nps:Math.round((DATA.filter(d=>d.enps==="Promotor").length-DATA.filter(d=>d.enps==="Detrator").length)),
+trein:Math.round(DATA.reduce((s,d)=>s+d.trein,0)/100),
+promo:DATA.filter(d=>d.promo==="Sim").length};}
+let charts=[];
+function drawCharts(){
+charts.forEach(c=>c.destroy());charts=[];
+Chart.defaults.color='#a1a1aa';Chart.defaults.borderColor='#2e2e35';
+// dept count
+const dc={};DATA.forEach(d=>dc[d.dept]=(dc[d.dept]||0)+1);
+charts.push(new Chart(chDept,{type:'doughnut',data:{labels:Object.keys(dc),datasets:[{data:Object.values(dc),backgroundColor:DEPTS.map(d=>d.cor),borderWidth:0}]},options:{plugins:{legend:{position:'bottom',labels:{boxWidth:12,font:{size:11}}}}} }));
+// perf
+const pc=[0,0,0,0,0];DATA.forEach(d=>pc[d.perf-1]++);
+charts.push(new Chart(chPerf,{type:'bar',data:{labels:['1 ★','2 ★','3 ★','4 ★','5 ★'],datasets:[{data:pc,backgroundColor:['#ef4444','#f97316','#eab308','#22c55e','#FFD500'],borderRadius:8}]},options:{plugins:{legend:{display:false}},scales:{y:{beginAtZero:true}}}}));
+// enps
+const e={Promotor:0,Neutro:0,Detrator:0};DATA.forEach(d=>e[d.enps]++);
+charts.push(new Chart(chEnps,{type:'doughnut',data:{labels:Object.keys(e),datasets:[{data:Object.values(e),backgroundColor:['#22c55e','#eab308','#ef4444'],borderWidth:0}]},options:{plugins:{legend:{position:'bottom'}}}}));
+// salario medio
+const ss={},sn={};DATA.forEach(d=>{ss[d.dept]=(ss[d.dept]||0)+d.salario;sn[d.dept]=(sn[d.dept]||0)+1;});
+const sl=Object.keys(ss).map(k=>Math.round(ss[k]/sn[k]));
+charts.push(new Chart(chSal,{type:'bar',data:{labels:Object.keys(ss),datasets:[{data:sl,backgroundColor:'#FFD500',borderRadius:8}]},options:{indexAxis:'y',plugins:{legend:{display:false}},scales:{x:{ticks:{callback:v=>'€'+v}}}}}));
+// turnover por dept
+const td={},tf={},tn={};DATA.forEach(d=>{tn[d.dept]=(tn[d.dept]||0)+1;if(d.status==="Desligado")td[d.dept]=(td[d.dept]||0)+1;tf[d.dept]=(tf[d.dept]||0)+d.faltas;});
+Object.keys(tn).forEach(k=>{td[k]=td[k]||0;tf[k]=+(tf[k]/tn[k]).toFixed(1);});
+charts.push(new Chart(chTurn,{type:'bar',data:{labels:Object.keys(tn),datasets:[{label:'Desligados',data:Object.keys(tn).map(k=>td[k]),backgroundColor:'#ef4444',borderRadius:6},{label:'Faltas médias',data:Object.keys(tn).map(k=>tf[k]),backgroundColor:'#3b82f6',borderRadius:6}]},options:{plugins:{legend:{position:'bottom'}},scales:{y:{beginAtZero:true}}}}));
+// scatter satisfação x desempenho
+charts.push(new Chart(chScatter,{type:'bubble',data:{datasets:[{label:'Colaboradores',data:DATA.map(d=>({x:d.sat,y:d.perf+(rnd()*.4-.2),r:Math.max(4,d.salario/1200),status:d.status})),backgroundColor:DATA.map(d=>d.status==="Ativo"?'rgba(255,213,0,.6)':'rgba(239,68,68,.6)')}]},options:{scales:{x:{title:{display:true,text:'Satisfação (1-10)'}},y:{min:0.5,max:5.5,title:{display:true,text:'Desempenho (1-5)'}}},plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>{const d=DATA[c.dataIndex];return `${d.nome} • ${d.dept} • €${fmt(d.salario)} • Sat ${d.sat} • Perf ${d.perf}`}}}}}}));
+// treinamento por nível (junior/pleno/senior/lead via cargo)
+function nivel(c){if(/Junior|Support|Analyst|QA Analyst|Player/i.test(c))return'Júnior / Operacional';if(/Senior|Lead|Manager|Producer|Scientist/i.test(c))return'Sênior / Lead';return'Pleno';}
+const ts={},tc={};DATA.forEach(d=>{const n=nivel(d.cargo);ts[n]=(ts[n]||0)+d.trein;tc[n]=(tc[n]||0)+1;});
+charts.push(new Chart(chTrain,{type:'bar',data:{labels:Object.keys(ts),datasets:[{data:Object.keys(ts).map(k=>Math.round(ts[k]/tc[k])),backgroundColor:['#06b6d4','#FFD500','#a855f7'],borderRadius:8}]},options:{plugins:{legend:{display:false}},scales:{y:{beginAtZero:true,title:{display:true,text:'horas/ano'}}}}}));
+}
+function renderKPIs(){
+const m=medias();
+document.getElementById('kpis').innerHTML=`
+<div class="kpi"><small>Headcount</small><div class="v">100</div><div class="d">${100-m.turn} ativos • ${m.turn} desligados</div></div>
+<div class="kpi"><small>Turnover</small><div class="v r">${m.turn}%</div><div class="d">meta games: &lt; 12%</div></div>
+<div class="kpi"><small>Salário médio</small><div class="v y">€ ${fmt(m.sal)}</div><div class="d">por mês</div></div>
+<div class="kpi"><small>Satisfação média</small><div class="v b">${m.sat}/10</div><div class="d">clima geral</div></div>
+<div class="kpi"><small>eNPS</small><div class="v g">${m.nps}</div><div class="d">promotores − detratores</div></div>
+<div class="kpi"><small>Faltas médias</small><div class="v">${m.falt}</div><div class="d">dias / ano</div></div>
+<div class="kpi"><small>Treinamento</small><div class="v">${m.trein}h</div><div class="d">média anual</div></div>
+<div class="kpi"><small>Promovidos</small><div class="v g">${m.promo}</div><div class="d">últimos 12 meses</div></div>`;
+const topDept=Object.entries(DATA.reduce((a,d)=>(a[d.dept]=(a[d.dept]||0)+1,a),{})).sort((a,b)=>b[1]-a[1])[0];
+document.getElementById('insights').innerHTML=`
+<div class="ins">💡 <b>Insight 1 — Turnover:</b> ${m.turn}% de rotatividade, acima da meta de 12%. Desligados concentram satisfação ≤ 6 e média de faltas maior — sinal clássico de desengajamento antes da saída.</div>
+<div class="ins">💡 <b>Insight 2 — Remuneração:</b> Engenharia e Produto têm os maiores salários (€8–12k sênior), enquanto QA & Suporte ficam em €3,4–6k. Maior dept é <b>${topDept[0]}</b> (${topDept[1]} pessoas).</div>
+<div class="ins">💡 <b>Insight 3 — Clima (eNPS ${m.nps}):</b> focar nos detratores (notas 0–6). Ações: 1:1s nas cells, plano de carreira e ${m.trein}h médias de treinamento — ampliar para quem tem perf ≤ 2.</div>`;
+}
+function fillFilters(){
+const ds=[...new Set(DATA.map(d=>d.dept))],cs=[...new Set(DATA.map(d=>d.cell))];
+document.getElementById('fDept').innerHTML='<option value="">Todos departamentos</option>'+ds.map(d=>`<option>${d}</option>`).join('');
+document.getElementById('fCell').innerHTML='<option value="">Todas as cells</option>'+cs.map(d=>`<option>${d}</option>`).join('');
+}
+function renderTable(){
+const q=document.getElementById('fSearch').value.toLowerCase(),fd=document.getElementById('fDept').value,fs=document.getElementById('fStatus').value,fc=document.getElementById('fCell').value;
+const rows=DATA.filter(d=>(!fd||d.dept===fd)&&(!fs||d.status===fs)&&(!fc||d.cell===fc)&&(!q||(d.nome+d.cargo+d.cell+d.id).toLowerCase().includes(q)));
+document.getElementById('tbody').innerHTML=rows.map(d=>`<tr>
+<td><b>${d.id}</b></td><td>${d.nome}</td><td>${d.dept}</td><td>${d.cargo}</td><td>${d.cell}</td>
+<td>€ ${fmt(d.salario)}</td><td>${d.adm}</td>
+<td><span class="pill ${d.status==="Ativo"?'p-ativo':'p-desl'}">${d.status}</span></td>
+<td>${d.faltas}</td><td>${d.trein}h</td><td class="stars">${'★'.repeat(d.perf)}${'☆'.repeat(5-d.perf)}</td>
+<td>${d.promo}</td><td>${d.sat}/10</td>
+<td><span class="pill ${d.enps==="Promotor"?'p-prom':d.enps==="Neutro"?'p-neut':'p-detr'}">${d.enps}</span></td></tr>`).join('')||'<tr><td colspan="14" style="text-align:center;padding:20px">Nenhum resultado para os filtros.</td></tr>';
+}
+function exportCSV(){
+const h=['ID','Nome','Departamento','Cargo','Cell','Salario_EUR_mes','Admissao','Status','Faltas_ano','Treinamento_h','Desempenho_1_5','Promocao','Satisfacao_1_10','eNPS'];
+const lines=[h.join(';')].concat(DATA.map(d=>[d.id,d.nome,d.dept,d.cargo,d.cell,d.salario,d.adm,d.status,d.faltas,d.trein,d.perf,d.promo,d.sat,d.enps].join(';')));
+const blob=new Blob(["\ufeff"+lines.join('\n'),{type:'text/csv;charset=utf-8'}]);
+const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='supercell_rh_100.csv';a.click();
+}
+function regenerar(){genData();renderKPIs();drawCharts();fillFilters();renderTable();}
+document.getElementById('hoje').textContent=new Date().toLocaleDateString('pt-BR');
+genData();renderKPIs();drawCharts();fillFilters();renderTable();
+</script>
+</body>
+</html>

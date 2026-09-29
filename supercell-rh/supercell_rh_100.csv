@@ -1,0 +1,101 @@
+﻿ID;Nome;Departamento;Cargo;Cell;Salario;Admissao;Status;Faltas;Trein;Perf;Promo;Sat;eNPS
+SC-001;Armas Johansson;People, RH & Admin;Recruiter;Clash Royale;4500;05/12/2025;Ativo;0;52;5;Não;10;Promotor
+SC-002;Marcus Santos;QA & Suporte;QA Lead;Brawl Stars;5600;25/10/2025;Ativo;2;27;5;Não;10;Promotor
+SC-003;Olli Tanaka;People, RH & Admin;Finance Analyst;Squad Busters;5550;15/11/2016;Ativo;1;54;4;Sim;6;Detrator
+SC-004;Aino Dubois;Engenharia;Backend Engineer;Clash Royale;9350;21/06/2019;Ativo;3;60;5;Não;10;Promotor
+SC-005;Antti Kim;Produto;Lead Producer;Hay Day;9400;05/10/2024;Ativo;4;46;5;Sim;8;Neutro
+SC-006;Kaisa Costa;Produto;Producer;Boom Beach;6850;15/01/2015;Desligado;10;38;5;Não;10;Promotor
+SC-007;Kaisa Andersen;Game Design;Senior Game Designer;Hay Day;9400;07/07/2015;Ativo;1;42;5;Não;10;Promotor
+SC-008;Juhani Kowalski;Game Design;Level Designer;Brawl Stars;7050;12/10/2016;Ativo;3;50;5;Sim;9;Promotor
+SC-009;Aamu Chen;Arte & Animação;2D Artist;Squad Busters;6350;08/09/2022;Desligado;12;41;5;Não;10;Promotor
+SC-010;Hugo Kowalski;QA & Suporte;Player Support;Clash of Clans;4300;01/10/2021;Ativo;1;49;5;Sim;10;Promotor
+SC-011;Ilona Smith;Arte & Animação;Senior VFX Artist;Hay Day;7950;22/04/2017;Ativo;1;19;2;Não;7;Neutro
+SC-012;Venla Mäkinen;Marketing & Community;UA Specialist;New Games;5450;25/06/2019;Ativo;1;35;4;Não;7;Neutro
+SC-013;Onni Costa;Marketing & Community;Brand Manager;Clash Royale;7150;23/07/2018;Ativo;10;8;1;Não;1;Detrator
+SC-014;Daniel Rantanen;Engenharia;Backend Engineer;Brawl Stars;9100;28/03/2022;Desligado;10;55;4;Não;8;Neutro
+SC-015;Otto Costa;Engenharia;Game Developer Pleno;Hay Day;8850;06/07/2022;Ativo;5;12;1;Não;6;Detrator
+SC-016;Sanni Korhonen;Marketing & Community;Brand Manager;Squad Busters;6100;10/04/2016;Ativo;1;27;5;Não;10;Promotor
+SC-017;Noora Santos;Data & Analytics;Data Analyst;Boom Beach;6750;08/03/2017;Ativo;3;32;5;Sim;10;Promotor
+SC-018;Olli Chen;QA & Suporte;Player Support;Clash Royale;4250;05/11/2024;Ativo;0;45;5;Não;9;Promotor
+SC-019;Antti Kowalski;Arte & Animação;2D Artist;Hay Day;7000;22/01/2025;Ativo;5;29;5;Não;8;Neutro
+SC-020;Aleksi Kowalski;Engenharia;Senior Game Engineer;Boom Beach;10100;20/03/2025;Ativo;3;29;4;Não;6;Detrator
+SC-021;Juhani Johnson;Engenharia;Backend Engineer;New Games;9500;27/06/2023;Desligado;14;41;4;Não;8;Neutro
+SC-022;Juhani Andersen;Game Design;Level Designer;Hay Day;6600;11/02/2017;Desligado;6;25;2;Não;6;Detrator
+SC-023;Felix Koskinen;Marketing & Community;Community Manager;Clash of Clans;6000;07/01/2022;Desligado;3;14;3;Não;6;Detrator
+SC-024;Veera Lehtonen;Data & Analytics;Data Scientist;Hay Day;8950;03/06/2023;Ativo;5;53;5;Sim;10;Promotor
+SC-025;Hugo Nakamura;Engenharia;Game Developer Pleno;Boom Beach;8800;26/11/2025;Ativo;3;45;4;Sim;8;Neutro
+SC-026;Ilona Rantanen;Arte & Animação;Senior VFX Artist;Clash Royale;8650;27/01/2016;Ativo;0;28;4;Não;9;Promotor
+SC-027;Ilona Korhonen;Marketing & Community;Brand Manager;Boom Beach;6700;19/03/2017;Ativo;3;47;5;Não;10;Promotor
+SC-028;Onni Garcia;Game Design;Game Designer;Clash Royale;5900;21/10/2016;Ativo;0;19;3;Não;6;Detrator
+SC-029;Julia Laine;Produto;Producer;Clash of Clans;6250;16/05/2024;Ativo;4;56;4;Não;9;Promotor
+SC-030;Väinö Laine;Marketing & Community;Brand Manager;Squad Busters;6700;18/06/2019;Ativo;5;39;5;Sim;10;Promotor
+SC-031;Lucas Johansson;Engenharia;Senior Game Engineer;Boom Beach;9500;25/07/2016;Desligado;10;27;3;Não;6;Detrator
+SC-032;Ilona Koskinen;Data & Analytics;Data Analyst;Brawl Stars;7200;19/09/2024;Desligado;8;33;2;Não;3;Detrator
+SC-033;Armas Rantanen;Engenharia;Senior Game Engineer;Hay Day;9900;20/12/2023;Ativo;1;37;4;Sim;9;Promotor
+SC-034;Eino Mäkinen;Engenharia;Senior Game Engineer;Clash Royale;9400;06/09/2015;Ativo;4;60;5;Não;8;Neutro
+SC-035;Sanni Kowalski;Produto;Lead Producer;New Games;8500;03/10/2017;Ativo;3;58;4;Sim;6;Detrator
+SC-036;Mikko Mäkinen;Engenharia;Game Developer Pleno;New Games;6850;05/06/2019;Ativo;4;35;5;Não;8;Neutro
+SC-037;Emma Kim;Game Design;Level Designer;New Games;6850;05/06/2025;Ativo;3;52;5;Não;10;Promotor
+SC-038;Katja Mäkinen;Arte & Animação;2D Artist;New Games;5450;14/08/2023;Ativo;2;49;5;Não;10;Promotor
+SC-039;Onni Costa;Engenharia;Junior Developer;New Games;5650;10/10/2023;Ativo;5;34;4;Sim;6;Detrator
+SC-040;Olivia Järvinen;Arte & Animação;Animator;New Games;6450;09/05/2023;Ativo;2;37;5;Sim;10;Promotor
+SC-041;Eetu Lindqvist;QA & Suporte;QA Analyst;Clash of Clans;4250;11/11/2016;Ativo;5;43;4;Sim;7;Neutro
+SC-042;Sami Virtanen;QA & Suporte;Player Support;Boom Beach;3950;06/10/2021;Desligado;14;52;4;Não;8;Neutro
+SC-043;Helmi Virtanen;Produto;Lead Producer;New Games;9050;27/06/2021;Ativo;4;38;5;Não;10;Promotor
+SC-044;Olivia Lehtonen;Engenharia;Senior Game Engineer;Clash Royale;9450;27/04/2023;Desligado;13;7;1;Não;2;Detrator
+SC-045;Otto Smith;Arte & Animação;3D Artist;Clash of Clans;5350;03/11/2022;Ativo;3;54;5;Sim;10;Promotor
+SC-046;Riina Chen;Arte & Animação;2D Artist;Hay Day;6100;08/09/2018;Ativo;3;26;5;Não;10;Promotor
+SC-047;Felix Rantanen;Data & Analytics;BI Specialist;Brawl Stars;7100;25/07/2024;Ativo;4;14;3;Não;6;Detrator
+SC-048;Felix Kim;Marketing & Community;UA Specialist;Hay Day;7450;17/10/2021;Ativo;0;10;1;Não;8;Neutro
+SC-049;Sofia Dubois;People, RH & Admin;Recruiter;Squad Busters;6050;16/06/2020;Ativo;4;30;5;Não;10;Promotor
+SC-050;Aleksi Kowalski;Engenharia;Backend Engineer;Boom Beach;10250;02/03/2019;Ativo;0;59;5;Sim;9;Promotor
+SC-051;Juhani Moreau;Data & Analytics;BI Specialist;Clash of Clans;7900;25/12/2023;Ativo;1;13;1;Não;6;Detrator
+SC-052;Aino Mäkinen;Engenharia;Backend Engineer;Squad Busters;8900;24/03/2020;Ativo;2;34;4;Não;6;Detrator
+SC-053;Lucas Tanaka;Data & Analytics;Data Analyst;Clash Royale;6750;10/04/2017;Ativo;5;36;5;Não;10;Promotor
+SC-054;Hugo Novak;Game Design;Economy Designer;Clash Royale;7000;05/06/2024;Ativo;0;53;5;Não;9;Promotor
+SC-055;Hugo Rantanen;QA & Suporte;QA Lead;New Games;5650;23/11/2015;Ativo;3;7;1;Não;8;Neutro
+SC-056;Väinö Lindqvist;Produto;Lead Producer;Hay Day;10050;15/05/2025;Ativo;4;9;3;Não;6;Detrator
+SC-057;Mia Mäkinen;Marketing & Community;Community Manager;Brawl Stars;4650;14/09/2020;Desligado;7;26;1;Não;6;Detrator
+SC-058;Anna Johansson;Game Design;Game Designer;Clash of Clans;7150;03/07/2017;Ativo;2;7;2;Não;3;Detrator
+SC-059;Otto Garcia;Game Design;Economy Designer;Brawl Stars;8300;22/10/2016;Ativo;2;41;5;Sim;7;Neutro
+SC-060;Mia Lindqvist;Game Design;Game Designer;Clash of Clans;7300;21/08/2021;Ativo;3;26;3;Não;7;Neutro
+SC-061;Emma Koskinen;Game Design;Economy Designer;New Games;8200;05/05/2021;Desligado;9;32;1;Não;8;Neutro
+SC-062;Veera Novak;Produto;Producer;Clash Royale;6450;17/04/2021;Ativo;2;28;5;Sim;10;Promotor
+SC-063;Juhani Kim;Game Design;Level Designer;Clash of Clans;5450;21/08/2022;Ativo;2;40;5;Não;8;Neutro
+SC-064;Helmi Laine;Engenharia;Junior Developer;Hay Day;6500;10/02/2020;Ativo;0;38;4;Sim;7;Neutro
+SC-065;Leevi Moreau;Produto;Lead Producer;Hay Day;8950;03/01/2021;Ativo;0;58;4;Sim;9;Promotor
+SC-066;Helmi Dubois;Game Design;Game Designer;Brawl Stars;7850;10/04/2019;Desligado;10;30;3;Não;4;Detrator
+SC-067;Lucas Nakamura;Arte & Animação;2D Artist;Clash Royale;5850;28/03/2022;Desligado;14;26;4;Não;7;Neutro
+SC-068;Liam Laine;Game Design;Level Designer;Brawl Stars;6600;13/06/2019;Ativo;3;57;5;Sim;10;Promotor
+SC-069;Lucas Järvinen;Engenharia;Backend Engineer;Hay Day;8600;27/09/2015;Ativo;5;49;5;Sim;9;Promotor
+SC-070;Aleksi Dubois;Engenharia;Junior Developer;Squad Busters;6100;14/09/2017;Ativo;5;34;5;Não;9;Promotor
+SC-071;Helmi Santos;Data & Analytics;Data Analyst;Squad Busters;8400;03/05/2016;Ativo;5;48;5;Sim;9;Promotor
+SC-072;Eetu Kowalski;Marketing & Community;Brand Manager;Hay Day;6650;08/05/2022;Ativo;3;13;2;Não;3;Detrator
+SC-073;Elena Garcia;Game Design;Game Designer;Boom Beach;7750;02/11/2025;Ativo;8;31;1;Não;2;Detrator
+SC-074;Mikko Kowalski;Produto;Lead Producer;New Games;10650;12/01/2018;Ativo;3;35;5;Não;10;Promotor
+SC-075;Aino Laine;Marketing & Community;UA Specialist;Clash of Clans;5550;27/09/2016;Ativo;3;31;2;Não;9;Promotor
+SC-076;Iida Nieminen;Marketing & Community;Community Manager;Squad Busters;5500;21/10/2018;Ativo;5;44;4;Não;8;Neutro
+SC-077;Aada Müller;Engenharia;Senior Game Engineer;Brawl Stars;8600;20/09/2018;Desligado;9;40;5;Não;9;Promotor
+SC-078;Elias Järvinen;Produto;Producer;Clash of Clans;8650;09/07/2020;Ativo;3;33;5;Não;10;Promotor
+SC-079;Leevi Müller;Marketing & Community;Community Manager;Hay Day;4950;15/09/2022;Desligado;4;16;2;Não;3;Detrator
+SC-080;Armas Andersen;Arte & Animação;2D Artist;Squad Busters;6800;07/11/2020;Ativo;1;29;4;Sim;9;Promotor
+SC-081;Katja Moreau;Produto;Product Manager;Boom Beach;7550;14/05/2015;Ativo;1;38;4;Não;8;Neutro
+SC-082;Onni Järvinen;Game Design;Level Designer;Squad Busters;6900;12/04/2017;Desligado;10;31;1;Não;2;Detrator
+SC-083;Olivia Kim;Arte & Animação;2D Artist;Squad Busters;6150;19/01/2022;Desligado;7;9;3;Não;6;Detrator
+SC-084;Mikko Mäkinen;Engenharia;Junior Developer;Brawl Stars;6300;23/12/2020;Desligado;4;6;3;Não;4;Detrator
+SC-085;Onni Garcia;Game Design;Level Designer;Brawl Stars;5400;21/04/2022;Ativo;5;24;3;Não;5;Detrator
+SC-086;Laura Müller;Engenharia;Junior Developer;New Games;6100;01/08/2021;Ativo;1;41;4;Não;7;Neutro
+SC-087;Jussi Laine;Marketing & Community;Community Manager;Boom Beach;5350;03/11/2019;Ativo;4;35;4;Não;6;Detrator
+SC-088;Elena Silva;Game Design;Economy Designer;New Games;6300;20/04/2015;Desligado;13;59;4;Não;5;Detrator
+SC-089;Tommi Müller;Engenharia;Game Developer Pleno;Boom Beach;7150;04/03/2022;Ativo;5;50;5;Não;10;Promotor
+SC-090;Emma Kim;QA & Suporte;Player Support;New Games;3950;12/05/2017;Ativo;0;35;5;Não;10;Promotor
+SC-091;Tommi Kowalski;Game Design;Economy Designer;Clash of Clans;8150;06/07/2019;Ativo;6;24;1;Não;3;Detrator
+SC-092;Emilia Kowalski;Marketing & Community;Community Manager;New Games;5800;16/07/2016;Ativo;5;25;5;Sim;9;Promotor
+SC-093;Noah Lindqvist;Produto;Producer;Brawl Stars;7250;16/11/2021;Ativo;3;50;5;Sim;8;Neutro
+SC-094;Petra Mäkinen;Data & Analytics;Data Scientist;Clash of Clans;9850;09/06/2022;Ativo;2;50;5;Sim;9;Promotor
+SC-095;Aino Silva;Game Design;Level Designer;New Games;5350;03/05/2025;Ativo;4;42;4;Sim;7;Neutro
+SC-096;Helmi Lehtonen;Engenharia;Junior Developer;Hay Day;5800;18/12/2018;Desligado;10;26;4;Não;6;Detrator
+SC-097;Aino Johnson;Engenharia;Senior Game Engineer;Clash of Clans;11550;23/08/2016;Desligado;7;51;4;Não;7;Neutro
+SC-098;Leevi Tanaka;Game Design;Level Designer;Boom Beach;6300;26/10/2020;Ativo;2;40;4;Não;8;Neutro
+SC-099;Olivia Järvinen;Produto;Producer;Clash of Clans;8250;25/08/2019;Ativo;5;34;4;Não;8;Neutro
+SC-100;Helmi Johnson;Arte & Animação;2D Artist;Hay Day;5300;08/08/2022;Ativo;4;9;3;Não;3;Detrator
