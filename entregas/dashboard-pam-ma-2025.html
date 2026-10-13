@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>PAM 2025 Maranhão — Dashboard | DECC0294 UFMA</title>
+<style>
+:root{--vinho:#8D0333;--dourado:#D4B277;--teal:#0AB0AB;--cinza:#BDBDBD;--bg:#f2f2f2;--txt:#1a1a1a;--muted:#666}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"Segoe UI",Calibri,Arial,sans-serif;background:var(--bg);color:#333;line-height:1.45}
+.filete{height:10px;background:var(--dourado)}
+header{background:var(--vinho);color:#fff;padding:28px 40px}
+header h1{font-size:28px}
+header p{color:#f1d9e2;font-size:14px;margin-top:6px}
+header .badge{display:inline-block;background:var(--dourado);color:var(--txt);font-weight:700;font-size:13px;padding:4px 12px;border-radius:999px;margin-top:10px}
+main{max-width:1120px;margin:24px auto;padding:0 20px 40px}
+.grid-kpi{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+.kpi{background:#fff;border:1px solid #e0e0e0;border-top:5px solid var(--vinho);padding:18px 20px}
+.kpi.alt{border-top-color:var(--teal)}
+.kpi.gold{border-top-color:var(--dourado)}
+.kpi .rot{font-size:12px;font-weight:700;letter-spacing:1px;color:var(--vinho);text-transform:uppercase}
+.kpi .num{font-size:30px;font-weight:800;color:var(--txt);margin-top:6px}
+.kpi .num small{font-size:14px;font-weight:400;color:var(--muted)}
+.kpi .comp{font-size:13px;color:#555;margin-top:6px}
+.up{color:var(--vinho);font-weight:700}.down{color:var(--teal);font-weight:700}
+.card{background:#fff;border:1px solid #e0e0e0;padding:22px 24px;margin-top:20px}
+.card h2{font-size:19px;color:var(--vinho);margin-bottom:4px}
+.card .sub{font-size:13px;color:var(--muted);margin-bottom:14px}
+.bar{display:grid;grid-template-columns:190px 1fr 110px;gap:10px;align-items:center;margin:7px 0;font-size:14px}
+.bar .lbl{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:right;color:#333}
+.bar .track{background:#eee;height:22px;border-radius:4px;overflow:hidden}
+.bar .fill{height:22px;background:var(--cinza);border-radius:4px}
+.bar.top .fill{background:var(--vinho)}
+.bar .val{font-weight:700;text-align:right}
+table{width:100%;border-collapse:collapse;font-size:13.5px;margin-top:8px}
+th{background:var(--vinho);color:#fff;text-align:left;padding:8px 10px;position:sticky;top:0}
+td{padding:7px 10px;border-bottom:1px solid #eee;text-align:right}
+td:first-child,th:first-child{text-align:left}
+tr:nth-child(even) td{background:#fafafa}
+.num-r{font-variant-numeric:tabular-nums}
+.pill{display:inline-block;font-size:12px;font-weight:700;padding:2px 10px;border-radius:999px;background:#faf0f3;color:var(--vinho)}
+.cols2{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+@media(max-width:800px){.cols2{grid-template-columns:1fr}.bar{grid-template-columns:130px 1fr 90px}}
+footer{font-size:12.5px;color:var(--muted);margin-top:20px}
+code{background:#f5f5f5;padding:1px 6px;border-radius:4px;font-size:12px;word-break:break-all}
+.decide{background:#faf7f8;border:1px solid var(--dourado);padding:14px 18px;margin-top:20px;font-size:14px}
+a{color:var(--vinho)}
+</style>
+</head>
+<body>
+<div class="filete"></div>
+<header>
+<h1>PAM 2025 — Maranhão: dashboard da produção agrícola municipal</h1>
+<p>DECC0294 · TIC Aplicada à Administração · UFMA · Rascunho para revisão da estudante</p>
+<span class="badge">Ano de referência 2025 · Publicado pelo IBGE em 17/09/2026 · Atualizado neste painel em 13/10/2026</span>
+</header>
+<main>
+
+<section class="grid-kpi">
+<div class="kpi"><div class="rot">Valor da produção — MA</div><div class="num">R$ 13,94 <small>bi</small></div><div class="comp">13.936.879 mil R$ · contra 2024: 12.972.489 mil R$ <span class="up">+7,4%</span> nominal</div></div>
+<div class="kpi alt"><div class="rot">Área plantada — MA</div><div class="num">2,19 <small>mi ha</small></div><div class="comp">2.192.293 ha · contra 2024: 2.081.936 ha <span class="up">+5,3%</span> · colhida: 2.186.503 ha</div></div>
+<div class="kpi gold"><div class="rot">Concentração soja + milho</div><div class="num">85,4% <small>do valor</small></div><div class="comp">Soja 64,0% (R$ 8,92 bi) + Milho 21,4% (R$ 2,98 bi) · 87,2% da área</div></div>
+<div class="kpi"><div class="rot">Participação no Brasil</div><div class="num">1,50% <small>do valor BR</small></div><div class="comp">Brasil 2025: R$ 928,0 bi · MA caiu de 1,66% em 2024 <span class="down">−0,16 p.p.</span></div></div>
+</section>
+
+<section class="card">
+<h2>Soja e milho dominam o valor — e o resto é pulverizado</h2>
+<p class="sub">Valor da produção por produto, MA 2025, em mil R$. Fonte: IBGE SIDRA tabela 5457, variável 215, N3[21], classificação 782.</p>
+<div class="bar top"><span class="lbl">Soja em grão</span><div class="track"><div class="fill" style="width:100%"></div></div><span class="val">8.921.025</span></div>
+<div class="bar top"><span class="lbl">Milho em grão</span><div class="track"><div class="fill" style="width:33.4%"></div></div><span class="val">2.975.809</span></div>
+<div class="bar"><span class="lbl">Cana-de-açúcar</span><div class="track"><div class="fill" style="width:8.7%"></div></div><span class="val">778.886</span></div>
+<div class="bar"><span class="lbl">Arroz em casca</span><div class="track"><div class="fill" style="width:3.4%"></div></div><span class="val">305.535</span></div>
+<div class="bar"><span class="lbl">Algodão herbáceo</span><div class="track"><div class="fill" style="width:3.4%"></div></div><span class="val">299.591</span></div>
+<div class="bar"><span class="lbl">Mandioca</span><div class="track"><div class="fill" style="width:2.6%"></div></div><span class="val">230.614</span></div>
+<div class="bar"><span class="lbl">Banana</span><div class="track"><div class="fill" style="width:1.6%"></div></div><span class="val">139.008</span></div>
+<div class="bar"><span class="lbl">Feijão em grão</span><div class="track"><div class="fill" style="width:1.4%"></div></div><span class="val">121.969</span></div>
+<div class="bar"><span class="lbl">Abacaxi*</span><div class="track"><div class="fill" style="width:0.8%"></div></div><span class="val">69.234</span></div>
+<div class="bar"><span class="lbl">Melancia</span><div class="track"><div class="fill" style="width:0.4%"></div></div><span class="val">35.735</span></div>
+<p class="sub" style="margin-top:10px">* Abacaxi e coco-da-baía têm unidade própria no SIDRA; aqui o valor segue comparável (mil R$), a quantidade não é somável ao total. Demais: sorgo 18.847, tomate 13.712, açaí 8.480, castanha-de-caju 7.623, coco 4.748, total MA 13.936.879.</p>
+</section>
+
+<section class="card">
+<h2>Tabela completa — valor, área, quantidade e rendimento</h2>
+<p class="sub">MA 2025. Valor em mil R$ (var 215) · Área plantada em ha (var 8331) · Qtd em t (var 214) · Rend. em kg/ha (var 112). Fonte: tabela 5457.</p>
+<div style="overflow-x:auto">
+<table class="num-r">
+<thead><tr><th>Produto</th><th>Valor mil R$</th><th>% valor</th><th>Área ha</th><th>Qtd t</th><th>Rend. kg/ha</th></tr></thead>
+<tbody>
+<tr><td>Soja em grão</td><td>8.921.025</td><td>64,0%</td><td>1.373.769</td><td>4.423.088</td><td>3.221</td></tr>
+<tr><td>Milho em grão</td><td>2.975.809</td><td>21,4%</td><td>536.729</td><td>2.712.134</td><td>5.059</td></tr>
+<tr><td>Cana-de-açúcar</td><td>778.886</td><td>5,6%</td><td>45.890</td><td>2.583.724</td><td>56.303</td></tr>
+<tr><td>Arroz em casca</td><td>305.535</td><td>2,2%</td><td>77.232</td><td>180.334</td><td>2.451</td></tr>
+<tr><td>Algodão herbáceo</td><td>299.591</td><td>2,1%</td><td>32.996</td><td>135.690</td><td>4.112</td></tr>
+<tr><td>Mandioca</td><td>230.614</td><td>1,7%</td><td>47.185</td><td>370.376</td><td>7.872</td></tr>
+<tr><td>Banana (cacho)</td><td>139.008</td><td>1,0%</td><td>—</td><td>78.718</td><td>16.813</td></tr>
+<tr><td>Feijão em grão</td><td>121.969</td><td>0,9%</td><td>—</td><td>29.310</td><td>654</td></tr>
+<tr><td>Abacaxi*</td><td>69.234</td><td>0,5%</td><td>—</td><td>38.428</td><td>22.034</td></tr>
+<tr><td>Melancia</td><td>35.735</td><td>0,3%</td><td>—</td><td>25.763</td><td>20.777</td></tr>
+<tr><td>Sorgo em grão</td><td>18.847</td><td>0,1%</td><td>—</td><td>32.592</td><td>2.206</td></tr>
+<tr><td><strong>Total MA</strong></td><td><strong>13.936.879</strong></td><td><strong>100%</strong></td><td><strong>2.192.293</strong></td><td><strong>—</strong></td><td><strong>—</strong></td></tr>
+</tbody>
+</table>
+</div>
+<p class="sub">Qtd total = ".." na API porque mistura toneladas e mil frutos. Área de permanentes (banana etc.) usa outra lógica de “destinada à colheita”.</p>
+</section>
+
+<div class="cols2">
+<section class="card">
+<h2>Evolução 2024 → 2025</h2>
+<p class="sub">Mesma fonte, períodos 2024,2025. Valores nominais, sem IPCA.</p>
+<table class="num-r">
+<thead><tr><th>Recorte</th><th>2024</th><th>2025</th><th>Var.</th></tr></thead>
+<tbody>
+<tr><td>Valor MA (mil R$)</td><td>12.972.489</td><td>13.936.879</td><td><span class="pill">+7,4%</span></td></tr>
+<tr><td>Valor BR (mil R$)</td><td>783.212.909</td><td>928.003.291</td><td><span class="pill">+18,5%</span></td></tr>
+<tr><td>Área MA (ha)</td><td>2.081.936</td><td>2.192.293</td><td><span class="pill">+5,3%</span></td></tr>
+<tr><td>Área BR (ha)</td><td>97.285.169</td><td>101.352.164</td><td><span class="pill">+4,2%</span></td></tr>
+<tr><td>Soja MA valor</td><td>8.338.428</td><td>8.921.025</td><td>+7,0%</td></tr>
+<tr><td>Milho MA valor</td><td>2.769.647</td><td>2.975.809</td><td>+7,4%</td></tr>
+<tr><td>Cana MA valor</td><td>505.519</td><td>778.886</td><td>+54,0%</td></tr>
+<tr><td>Arroz MA valor</td><td>388.988</td><td>305.535</td><td>−21,5%</td></tr>
+<tr><td>Soja MA área</td><td>1.302.915</td><td>1.373.769</td><td>+5,4%</td></tr>
+<tr><td>Milho MA área</td><td>496.073</td><td>536.729</td><td>+8,2%</td></tr>
+</tbody>
+</table>
+</section>
+<section class="card">
+<h2>Novos produtos 2025 + contexto BR</h2>
+<p class="sub">PAM passou de 64 → 70 produtos (Nota Técnica IBGE 01/2026).</p>
+<table class="num-r"><thead><tr><th>Novo produto</th><th>MA 2025 (mil R$)</th></tr></thead>
+<tbody>
+<tr><td>Abóbora</td><td>68</td></tr>
+<tr><td>Alface, canola, cenoura, chuchu, inhame, milho-verde, gergelim, morango, pimentão, repolho, acerola, cupuaçu, graviola</td><td>— (sem registro no MA)</td></tr>
+</tbody></table>
+<p class="sub" style="margin-top:12px">Leitura: no MA o ganho de granularidade ainda não aparece; a cana segurou o crescimento via preço (+54% com área estável em ~46 mil ha), enquanto o arroz caiu −21,5% com área estável. Feijão com 654 kg/ha e mandioca com 7.872 kg/ha sinalizam agricultura familiar de baixo rendimento frente a soja (3.221) e milho (5.059).</p>
+<p class="sub">Valor/ha: MA ≈ R$ 6.357/ha · Brasil ≈ R$ 9.155/ha.</p>
+</section>
+</div>
+
+<section class="card">
+<h2>De onde veio cada número (reproduzível)</h2>
+<p class="sub">Todas as consultas em 13/10/2026. Copie no navegador:</p>
+<p style="font-size:13px;margin:6px 0">Totais MA: <code>https://servicodados.ibge.gov.br/api/v3/agregados/5457/periodos/2024,2025/variaveis/215|8331|216?localidades=N3[21]</code></p>
+<p style="font-size:13px;margin:6px 0">Totais BR: <code>https://servicodados.ibge.gov.br/api/v3/agregados/5457/periodos/2024,2025/variaveis/215|8331?localidades=N1[1]</code></p>
+<p style="font-size:13px;margin:6px 0">Por produto: <code>https://servicodados.ibge.gov.br/api/v3/agregados/5457/periodos/2025/variaveis/215|214|8331|112?localidades=N3[21]&amp;classificacao=782[40124,40122,40106,40102,40099,40119,...]</code> (metadados: <code>.../5457/metadados</code>)</p>
+<p style="font-size:13px;margin:6px 0">Pesquisas 14/15: <code>https://servicodados.ibge.gov.br/api/v1/pesquisas/14</code> e <code>/15</code> — último período 2025, publicação 17/09/2026.</p>
+</section>
+
+<div class="decide">
+<strong>Rascunho — falta decisão humana:</strong> ① Destinatário deste painel (ex.: Secretaria de Agricultura do MA? diretoria?). ② Decisão que ele sustenta na segunda-feira (ex.: diversificar? priorizar logística de grãos no Sul?). ③ Limitação declarada: valores nominais, sem IPCA; 2025 inclui 14 produtos novos com série iniciada em 2025 e 8 produtos encerrados em 2024 — não comparar esses itens com anos anteriores.
+</div>
+
+<footer>Fontes: IBGE PAM 2025, SIDRA tabela 5457 + API de Pesquisas IDs 14/15 + Nota Técnica 01/2026 e informativo PAM 2025 (biblioteca.ibge.gov.br). Arquivos do projeto: <code>entregas/modulo8-indicadores.csv</code>, <code>saidas/serie-pam-ma-valor.csv</code>, <code>entregas/painel.html</code>. NAO SEI nada além do que está citado acima.</footer>
+</main>
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Painel do projeto - DECC0294</title>
+<style>
+  :root{--vinho:#8D0333;--dourado:#D4B277;--teal:#0AB0AB}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:"Segoe UI",Calibri,Arial,sans-serif;color:#333;background:#f2f2f2;padding:0 0 48px}
+  header{background:var(--vinho);color:#fff;padding:26px 40px 22px}
+  header h1{font-size:26px;font-weight:700}
+  header p{margin-top:6px;font-size:15px;color:#f1d9e2}
+  .filete{height:10px;background:var(--dourado)}
+  main{max-width:1060px;margin:26px auto;padding:0 20px}
+  .cartoes{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
+  .cartao{background:#fff;border:1px solid #e0e0e0;border-top:5px solid var(--vinho);padding:18px 20px}
+  .cartao .rot{font-size:13px;font-weight:700;letter-spacing:1px;color:var(--vinho);text-transform:uppercase}
+  .cartao .numero{font-size:38px;font-weight:700;color:#1a1a1a;margin-top:6px;line-height:1.1}
+  .cartao .un{font-size:15px;font-weight:400;color:#666}
+  .cartao .comp{font-size:14px;margin-top:8px;color:#555}
+  .cartao .conc{font-size:15px;margin-top:12px;line-height:1.4;color:#1a1a1a}
+  .cartao .periodo{font-size:13px;margin-top:10px;color:#777}
+  .bloco{background:#fff;border:1px solid #e0e0e0;padding:22px 24px;margin-top:22px}
+  .bloco h2{font-size:19px;color:var(--vinho);margin-bottom:16px}
+  .grafico svg{width:100%;height:auto}
+  .grafico .cat{font-size:15px;fill:#333;text-anchor:end}
+  .grafico .val{font-size:15px;fill:#1a1a1a;font-weight:700}
+  .nota{font-size:13px;color:#777;margin-top:12px}
+  table{width:100%;border-collapse:collapse;font-size:14px}
+  th{background:var(--vinho);color:#fff;text-align:left;padding:9px 10px;font-weight:700}
+  td{padding:8px 10px;border-bottom:1px solid #eee;vertical-align:top}
+  tr:nth-child(even) td{background:#fafafa}
+  footer{max-width:1060px;margin:22px auto 0;padding:0 20px;font-size:13px;color:#777}
+  .destinatario{background:#faf7f8;border:1px solid var(--dourado);padding:14px 18px;margin-top:22px;font-size:14px}
+</style>
+</head>
+<body>
+<div class="filete"></div>
+<header>
+  <h1>Painel do projeto</h1>
+  <p>DECC0294 &middot; Tecnologia da Informacao e Comunicacao Aplicada a Administracao &middot; UFMA</p>
+  <p>Atualizado em 13/10/2026 as 10:31</p>
+</header>
+<main>
+  <div class="cartoes">
+    <article class="cartao">
+      <span class="rot">Valor da producao agricola MA</span>
+      <p class="numero">13936879 <span class="un">mil R$</span></p>
+      <p class="comp">contra valor em 2024: <strong>12972489</strong> <span style="color:#8D0333">+7.4%</span></p>
+      <p class="conc">O Maranhao produziu R$ 13,94 bilhoes em 2025, 7,4% acima dos R$ 12,97 bi de 2024</p>
+      <p class="periodo">2025</p>
+    </article>
+    <article class="cartao">
+      <span class="rot">Area plantada MA</span>
+      <p class="numero">2192293 <span class="un">ha</span></p>
+      <p class="comp">contra area em 2024: <strong>2081936</strong> <span style="color:#8D0333">+5.3%</span></p>
+      <p class="conc">A area plantada no Maranhao foi de 2,19 milhoes de ha em 2025, 5,3% acima de 2024</p>
+      <p class="periodo">2025</p>
+    </article>
+    <article class="cartao">
+      <span class="rot">Concentracao em soja</span>
+      <p class="numero">64,0 <span class="un">% do valor MA</span></p>
+      <p class="comp">contra participacao do milho: <strong>21,4</strong> <span style="color:#8D0333">+199.1%</span></p>
+      <p class="conc">A soja responde por 64% do valor agricola do Maranhao em 2025, contra 21,4% do milho</p>
+      <p class="periodo">2025</p>
+    </article>
+    <article class="cartao">
+      <span class="rot">Participacao nacional</span>
+      <p class="numero">1,5 <span class="un">% do Brasil</span></p>
+      <p class="comp">contra participacao em 2024: <strong>1,66</strong> <span style="color:#0AB0AB">-9.6%</span></p>
+      <p class="conc">O Maranhao responde por apenas 1,5% do valor agricola nacional em 2025, abaixo de 1,66% em 2024</p>
+      <p class="periodo">2025</p>
+    </article>
+  </div>
+  <section class="bloco">
+    <h2>Valor da producao por produto - MA 2025 (mil R$)</h2>
+    <div class="grafico"><svg viewBox="0 0 900 500" role="img" aria-label="Valor da producao por produto - MA 2025 (mil R$)">
+<text x="238" y="33" class="cat">Soja em grao</text>
+<rect x="250" y="10" width="530.0" height="34" fill="#8D0333"></rect>
+<text x="790.0" y="33" class="val">8.921.025</text>
+<text x="238" y="81" class="cat">Milho em grao</text>
+<rect x="250" y="58" width="176.8" height="34" fill="#BDBDBD"></rect>
+<text x="436.8" y="81" class="val">2.975.809</text>
+<text x="238" y="129" class="cat">Cana-de-acucar</text>
+<rect x="250" y="106" width="46.3" height="34" fill="#BDBDBD"></rect>
+<text x="306.3" y="129" class="val">778.886</text>
+<text x="238" y="177" class="cat">Arroz em casca</text>
+<rect x="250" y="154" width="18.2" height="34" fill="#BDBDBD"></rect>
+<text x="278.2" y="177" class="val">305.535</text>
+<text x="238" y="225" class="cat">Algodao herbaceo</text>
+<rect x="250" y="202" width="17.8" height="34" fill="#BDBDBD"></rect>
+<text x="277.8" y="225" class="val">299.591</text>
+<text x="238" y="273" class="cat">Mandioca</text>
+<rect x="250" y="250" width="13.7" height="34" fill="#BDBDBD"></rect>
+<text x="273.7" y="273" class="val">230.614</text>
+<text x="238" y="321" class="cat">Banana</text>
+<rect x="250" y="298" width="8.3" height="34" fill="#BDBDBD"></rect>
+<text x="268.3" y="321" class="val">139.008</text>
+<text x="238" y="369" class="cat">Feijao em grao</text>
+<rect x="250" y="346" width="7.2" height="34" fill="#BDBDBD"></rect>
+<text x="267.2" y="369" class="val">121.969</text>
+<text x="238" y="417" class="cat">Abacaxi</text>
+<rect x="250" y="394" width="4.1" height="34" fill="#BDBDBD"></rect>
+<text x="264.1" y="417" class="val">69.234</text>
+<text x="238" y="465" class="cat">Melancia</text>
+<rect x="250" y="442" width="2.1" height="34" fill="#BDBDBD"></rect>
+<text x="262.1" y="465" class="val">35.735</text>
+</svg></div>
+    <p class="nota">A barra em destaque e a maior do conjunto. As demais aparecem em
+    cinza porque servem de contexto, e nao de comparacao principal.</p>
+  </section>
+  <section class="bloco">
+    <h2>De onde vem cada numero</h2>
+    <table>
+      <thead><tr><th>Indicador</th><th>Periodo</th><th>Fonte e filtro</th><th>Consulta</th></tr></thead>
+      <tbody>
+<tr><td>Valor da producao agricola MA</td><td>2025</td><td>IBGE SIDRA tabela 5457 PAM UF Maranhao N3[21] variavel 215 valor da producao periodos 2024-2025</td><td>pam-ma-valor.sql</td></tr>
+<tr><td>Area plantada MA</td><td>2025</td><td>IBGE SIDRA tabela 5457 PAM UF Maranhao N3[21] variavel 8331 area plantada periodos 2024-2025</td><td>pam-ma-area.sql</td></tr>
+<tr><td>Concentracao em soja</td><td>2025</td><td>IBGE SIDRA tabela 5457 PAM MA 2025 variavel 215 por produto classificacao 782 soja cat 40124 milho cat 40122</td><td>pam-ma-produtos.sql</td></tr>
+<tr><td>Participacao nacional</td><td>2025</td><td>IBGE SIDRA tabela 5457 PAM Brasil N1[1] e MA N3[21] variavel 215 periodos 2024-2025</td><td>pam-ma-brasil.sql</td></tr>
+      </tbody>
+    </table>
+  </section>
+  <div class="destinatario">
+    <strong>Destinatario deste painel:</strong> ____________________________<br>
+    <strong>Decisao que ele sustenta:</strong> ____________________________
+  </div>
+</main>
+<footer>
+  Gerado em 13/10/2026 pelo script atividade_modulo8.py. Os numeros vieram das consultas
+  registradas no encontro 8 e podem ser refeitos a partir dos arquivos .sql citados.
+</footer>
+</body>
+</html>

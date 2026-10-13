@@ -1,0 +1,5 @@
+﻿indicador;titulo_conclusao;valor;unidade;periodo;comparacao;valor_comparacao;fonte;consulta
+Valor da producao agricola MA;O Maranhao produziu R$ 13,94 bilhoes em 2025, 7,4% acima dos R$ 12,97 bi de 2024;13936879;mil R$;2025;valor em 2024;12972489;IBGE SIDRA tabela 5457 PAM UF Maranhao N3[21] variavel 215 valor da producao periodos 2024-2025;pam-ma-valor.sql
+Area plantada MA;A area plantada no Maranhao foi de 2,19 milhoes de ha em 2025, 5,3% acima de 2024;2192293;ha;2025;area em 2024;2081936;IBGE SIDRA tabela 5457 PAM UF Maranhao N3[21] variavel 8331 area plantada periodos 2024-2025;pam-ma-area.sql
+Concentracao em soja;A soja responde por 64% do valor agricola do Maranhao em 2025, contra 21,4% do milho;64,0;% do valor MA;2025;participacao do milho;21,4;IBGE SIDRA tabela 5457 PAM MA 2025 variavel 215 por produto classificacao 782 soja cat 40124 milho cat 40122;pam-ma-produtos.sql
+Participacao nacional;O Maranhao responde por apenas 1,5% do valor agricola nacional em 2025, abaixo de 1,66% em 2024;1,5;% do Brasil;2025;participacao em 2024;1,66;IBGE SIDRA tabela 5457 PAM Brasil N1[1] e MA N3[21] variavel 215 periodos 2024-2025;pam-ma-brasil.sql
