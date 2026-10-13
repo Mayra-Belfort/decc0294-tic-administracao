@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Diagnóstico Turnover — Setembro 2026 | RH</title>
+<style>
+:root{--bg:#f4f6fb;--card:#fff;--ink:#1a2333;--muted:#64748b;--accent:#2563eb;--red:#dc2626;--amber:#d97706;--green:#059669;--line:#e2e8f0}
+*{box-sizing:border-box}body{margin:0;font-family:'Segoe UI',Arial,sans-serif;background:var(--bg);color:var(--ink)}
+header{background:linear-gradient(135deg,#1e3a8a,#2563eb);color:#fff;padding:36px 24px}
+.wrap{max-width:1080px;margin:0 auto}
+header h1{margin:0;font-size:32px}header p{opacity:.9;margin:8px 0 0}
+.badge{display:inline-block;background:#ffffff22;border:1px solid #ffffff44;padding:4px 12px;border-radius:999px;font-size:13px;margin-top:12px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin:24px 0}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;box-shadow:0 2px 8px #0001}
+.kpi{font-size:34px;font-weight:800;margin:4px 0}.kpi small{font-size:14px;font-weight:400;color:var(--muted)}
+.label{font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);font-weight:700}
+.red{color:var(--red)}.blue{color:var(--accent)}.amber{color:var(--amber)}.green{color:var(--green)}
+section{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px;margin:16px 0}
+h2{margin:0 0 12px;font-size:20px}table{width:100%;border-collapse:collapse;font-size:14px}th,td{padding:10px;border-bottom:1px solid var(--line);text-align:left}th{background:#f8fafc;font-size:12px;text-transform:uppercase;color:var(--muted)}
+.bar{height:10px;background:#eef2ff;border-radius:99px;overflow:hidden;min-width:120px}.bar>div{height:100%;background:var(--accent);border-radius:99px}.bar.hot>div{background:var(--red)}.bar.mid>div{background:var(--amber)}
+.pills{display:flex;gap:10px;flex-wrap:wrap}.pill{background:#fef2f2;border:1px solid #fecaca;color:#991b1b;padding:10px 14px;border-radius:10px;font-weight:700}
+.rec{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}.rec div{border-left:5px solid var(--accent);background:#f8fafc;padding:14px;border-radius:0 10px 10px 0}
+footer{color:var(--muted);font-size:13px;padding:20px;text-align:center}
+.note{background:#fffbeb;border:1px solid #fde68a;border-radius:10px;padding:12px 14px;font-size:14px}
+code{background:#f1f5f9;padding:2px 6px;border-radius:6px}
+@media print{header{padding:20px}section{break-inside:avoid}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+<h1>📊 Diagnóstico de Turnover — Setembro / 2026</h1>
+<p>Apresentação executiva para o RH • Base: <code>dados_simulados_turnover.csv</code> (30 registros F001–F030, leitura integral)</p>
+<span class="badge">RASCUNHO — precisa de validação humana • Dados anonimizados (LGPD)</span>
+</div></header>
+
+<div class="wrap" style="padding:0 20px 30px">
+
+<div class="grid">
+<div class="card"><div class="label">Headcount médio</div><div class="kpi blue">27 <small>(30 inicial → 24 final)</small></div><div style="font-size:13px;color:var(--muted)">Fórmula: (30+24)/2 • Fonte: contagem direta da base</div></div>
+<div class="card"><div class="label">Turnover geral</div><div class="kpi red">22,22% <small>6 desligados</small></div><div style="font-size:13px;color:var(--muted)">(6/27)×100 • Período 2026-09-01 a 30</div></div>
+<div class="card"><div class="label">Voluntário × Involuntário</div><div class="kpi"><span class="amber">14,81%</span> <small>4 vol.</small> | <span class="blue">7,41%</span> <small>2 invol.</small></div><div style="font-size:13px;color:var(--muted)">(4/27)×100 e (2/27)×100</div></div>
+<div class="card"><div class="label">Early turnover 90d</div><div class="kpi amber">n/c <small>2 casos early</small></div><div style="font-size:13px;color:var(--muted)">0 admissões em set → divisão por zero. Casos: 77d e 58d</div></div>
+</div>
+
+<section>
+<h2>1. Passo a passo (o que foi feito)</h2>
+<ol>
+<li><b>Leitura total:</b> 30 linhas da base, sem amostragem. Datas em ISO, áreas/cargos em minúsculas.</li>
+<li><b>Período:</b> 2026-09 inferido (6 desligamentos entre 08 e 28/09). 0 admissões em setembro; 6 admissões em agosto.</li>
+<li><b>Headcount:</b> inicial 30 (todos admitidos até 31/08 e ativos em 01/09) → final 24 → médio 27.</li>
+<li><b>Desligados:</b> F002, F003, F005, F008, F012, F025 — 4 voluntários + 2 involuntários, 0 indefinidos.</li>
+<li><b>Tenure:</b> F002 819d, F003 1054d, F005 900d, F008 77d, F012 756d, F025 58d.</li>
+</ol>
+<div class="note">⚠️ <b>Limitação:</b> early turnover oficial <b>não calculável</b> (admissões do período = 0). Dado informativo: 2 de 6 desligados (33,3%) saíram com ≤90 dias.</div>
+</section>
+
+<section>
+<h2>2. Turnover por área</h2>
+<table>
+<tr><th>Área</th><th>HI → HF (HM)</th><th>Deslig.</th><th>Taxa</th><th></th></tr>
+<tr><td><b>Logística</b></td><td>6 → 4 (5,0)</td><td>2</td><td><b class="red">40,00%</b></td><td><div class="bar hot"><div style="width:40%"></div></div></td></tr>
+<tr><td><b>RH</b></td><td>3 → 2 (2,5)</td><td>1</td><td><b class="red">40,00%</b></td><td><div class="bar hot"><div style="width:40%"></div></div></td></tr>
+<tr><td>Atendimento</td><td>6 → 5 (5,5)</td><td>1</td><td>18,18%</td><td><div class="bar mid"><div style="width:18%"></div></div></td></tr>
+<tr><td>TI</td><td>6 → 5 (5,5)</td><td>1</td><td>18,18%</td><td><div class="bar mid"><div style="width:18%"></div></div></td></tr>
+<tr><td>Vendas</td><td>6 → 5 (5,5)</td><td>1</td><td>18,18%</td><td><div class="bar mid"><div style="width:18%"></div></div></td></tr>
+<tr><td>Financeiro</td><td>3 → 3 (3,0)</td><td>0</td><td class="green">0%</td><td><div class="bar"><div style="width:0%"></div></div></td></tr>
+</table>
+<p style="font-size:13px;color:var(--muted)">Taxa área = (desligados área / headcount médio área)×100. Números vindos da contagem por área na base.</p>
+</section>
+
+<section>
+<h2>3. Turnover por cargo</h2>
+<table>
+<tr><th>Cargo</th><th>HM</th><th>Deslig.</th><th>Taxa</th><th></th></tr>
+<tr><td>Desenvolvedor</td><td>1,5</td><td>1</td><td><b class="red">66,67%</b> ⚠️ base n=2</td><td><div class="bar hot"><div style="width:67%"></div></div></td></tr>
+<tr><td>Estagiário</td><td>2,5</td><td>1</td><td><b>40,00%</b></td><td><div class="bar hot"><div style="width:40%"></div></div></td></tr>
+<tr><td>Analista</td><td>3,5</td><td>1</td><td>28,57%</td><td><div class="bar mid"><div style="width:29%"></div></div></td></tr>
+<tr><td>Assistente</td><td>3,5</td><td>1</td><td>28,57%</td><td><div class="bar mid"><div style="width:29%"></div></div></td></tr>
+<tr><td>Atendente</td><td>4,5</td><td>1</td><td>22,22%</td><td><div class="bar mid"><div style="width:22%"></div></div></td></tr>
+<tr><td>Vendedor</td><td>4,5</td><td>1</td><td>22,22%</td><td><div class="bar mid"><div style="width:22%"></div></div></td></tr>
+<tr><td>Auxiliar / Conferente / Suporte / Supervisor</td><td>—</td><td>0</td><td class="green">0%</td><td></td></tr>
+</table>
+</section>
+
+<section>
+<h2>4. Top 3 críticos (para o slide)</h2>
+<div class="pills"><span class="pill">🥇 Logística 40% (2 saídas)</span><span class="pill">🥈 RH 40% (1 saída, base pequena)</span><span class="pill">🥉 Desenvolvedor 66,7% (1 saída em n=2)</span></div>
+<h3 style="margin-top:18px">Faixa de tenure dos 6 desligados</h3>
+<table><tr><th>0–90d</th><th>91–180d</th><th>181–365d</th><th>&gt;365d</th></tr>
+<tr><td><b>2</b> (77d, 58d)</td><td>0</td><td>0</td><td><b>4</b> (819d, 1054d, 900d, 756d)</td></tr></table>
+<p style="font-size:13px;color:var(--muted)">Padrão duplo, miga: galera nova pedindo pra sair + gente sênior (+2 anos) saindo junto. Acende o alerta, viu?</p>
+</section>
+
+<section>
+<h2>5. Interpretação + 3 recomendações</h2>
+<div class="rec">
+<div><b>1. Logística primeiro 🔥</b><br>2 saídas em HM 5 = 40%. Fazer entrevista de desligamento padrão + revisar escala em 15 dias. Dono: Logística + RH.</div>
+<div><b>2. Onboarding 0–90d 🍼</b><br>2 voluntários early (atendente 77d + estagiário 58d). Criar buddy + checkpoint 30/60/90. Dono: RH.</div>
+<div><b>3. Blindar TI 💻</b><br>Desenvolvedor 66,7% é base minúscula, mas perder 1 de 2 dói. Fazer 1:1 de retenção com quem ficou. Dono: gestão TI.</div>
+</div>
+</section>
+
+<section>
+<h2>6. Conceito rapidinho (pra arrasar na apresentação)</h2>
+<p><b>Definição:</b> turnover = % de desligados sobre headcount médio no período. Voluntário = pediu pra sair; involuntário = empresa desligou.</p>
+<p><b>Exemplo BR:</b> varejo e logística costumam rodar 3–5% ao mês; 22% num mês só é bem acima — tipo sinal vermelho.</p>
+<p><b>Referência:</b> NAO SEI (sem base verificada aqui — não vou inventar, tá?).</p>
+<div class="note">🔒 <b>LGPD:</b> só IDs (F001–F030), sem nomes/CPF/e-mails. <b>Decisão humana pendente:</b> confirmar período oficial, validar causa de F008/F025 e priorizar recomendação 1, 2 ou 3.</div>
+</section>
+
+</div>
+<footer>Fonte única: dados_simulados_turnover.csv • Cálculos: (desligados/headcount médio)×100 • Rascunho gerado para revisão — não é texto final.</footer>
+</body>
+</html>

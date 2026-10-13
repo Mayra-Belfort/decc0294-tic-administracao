@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Relatório Turnover • Setembro 2026</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--navy:#0f1e3d;--blue:#2563eb;--sky:#38bdf8;--bg:#eef2f7;--card:#fff;--ink:#0f172a;--muted:#64748b;--red:#e11d48;--amber:#f59e0b;--green:#10b981;--line:#e2e8f0}
+body{font-family:'Segoe UI',system-ui,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.5}
+nav{position:sticky;top:0;z-index:10;background:#0f1e3df2;backdrop-filter:blur(8px);color:#fff}
+nav .wrap{max-width:1100px;margin:auto;display:flex;align-items:center;justify-content:space-between;padding:12px 20px}
+nav a{color:#cbd5e1;text-decoration:none;font-size:13px;margin-left:16px}nav a:hover{color:#fff}
+.btn{background:var(--blue);color:#fff;border:0;padding:9px 16px;border-radius:999px;font-weight:700;cursor:pointer;font-size:13px}
+.btn.ghost{background:#ffffff1a;border:1px solid #ffffff33}
+.hero{background:radial-gradient(900px 400px at 20% 0%,#2563eb55,transparent),linear-gradient(135deg,#0f1e3d 0%,#1e3a8a 60%,#2563eb 100%);color:#fff;padding:56px 20px 40px}
+.wrap{max-width:1100px;margin:auto}
+.hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:28px;align-items:center}
+@media(max-width:800px){.hero-grid{grid-template-columns:1fr}}
+.eyebrow{display:inline-block;background:#ffffff1f;border:1px solid #ffffff33;padding:6px 14px;border-radius:999px;font-size:12px;letter-spacing:.08em;text-transform:uppercase}
+.hero h1{font-size:44px;line-height:1.05;margin:14px 0 10px}
+.hero p.sub{color:#cbd5e1;font-size:16px;max-width:560px}
+.big-num{background:#ffffff12;border:1px solid #ffffff2a;border-radius:20px;padding:24px;text-align:center}
+.big-num .n{font-size:72px;font-weight:900;line-height:1}
+.big-num .d{color:#fecaca;font-weight:700}
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:-28px auto 0;padding:0 20px;max-width:1100px}
+@media(max-width:800px){.kpis{grid-template-columns:1fr 1fr;margin-top:16px}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px;box-shadow:0 8px 24px #0f1e3d14}
+.card .lbl{font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.card .val{font-size:30px;font-weight:900;margin:4px 0}
+.card .src{font-size:12px;color:var(--muted)}
+main{max-width:1100px;margin:auto;padding:20px}
+section.card{margin:16px 0;padding:26px}
+h2{font-size:22px;margin-bottom:4px}p.desc{color:var(--muted);font-size:14px;margin-bottom:16px}
+.bars{display:grid;gap:12px}
+.row{display:grid;grid-template-columns:150px 1fr 80px;gap:12px;align-items:center;font-size:14px}
+.track{background:#f1f5f9;border-radius:999px;height:16px;overflow:hidden;position:relative}
+.fill{height:100%;border-radius:999px;background:linear-gradient(90deg,var(--blue),var(--sky));width:0;transition:width 1.2s ease}
+.fill.hot{background:linear-gradient(90deg,#f43f5e,#fb7185)}
+.fill.warn{background:linear-gradient(90deg,#f59e0b,#fbbf24)}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+@media(max-width:800px){.cols{grid-template-columns:1fr}.row{grid-template-columns:110px 1fr 64px}}
+.donut-wrap{display:flex;gap:24px;align-items:center;flex-wrap:wrap}
+.legend{font-size:14px;display:grid;gap:8px}
+.dot{display:inline-block;width:12px;height:12px;border-radius:99px;margin-right:8px;vertical-align:middle}
+.alerts{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+@media(max-width:800px){.alerts{grid-template-columns:1fr}}
+.alert{border-radius:14px;padding:16px;color:#fff}
+.a1{background:linear-gradient(135deg,#e11d48,#fb7185)}.a2{background:linear-gradient(135deg,#d97706,#fbbf24)}.a3{background:linear-gradient(135deg,#4f46e5,#38bdf8)}
+.recs{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+@media(max-width:800px){.recs{grid-template-columns:1fr}}
+.rec{border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.rec header{padding:12px 16px;color:#fff;font-weight:800}
+.rec .body{padding:14px 16px;font-size:14px}
+.tag{display:inline-block;font-size:11px;font-weight:800;padding:3px 10px;border-radius:999px;background:#f1f5f9;color:#334155;margin-top:8px}
+table{width:100%;border-collapse:collapse;font-size:13.5px;margin-top:10px}
+th,td{padding:9px 10px;border-bottom:1px solid var(--line);text-align:left}
+th{font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);background:#f8fafc}
+.note{background:#fffbeb;border:1px solid #fde68a;border-radius:12px;padding:12px 14px;font-size:13.5px;margin-top:12px}
+footer{text-align:center;color:var(--muted);font-size:12.5px;padding:26px}
+@media print{nav,.no-print{display:none!important}.kpis{margin-top:0}section.card{break-inside:avoid;box-shadow:none}}
+</style>
+</head>
+<body>
+<nav><div class="wrap">
+<div><b>◉ RH Analytics</b> <span style="opacity:.6;font-size:13px">| Turnover Set/2026</span></div>
+<div class="no-print"><a href="#kpis">KPIs</a><a href="#areas">Áreas</a><a href="#cargos">Cargos</a><a href="#acoes">Ações</a> <button class="btn" onclick="window.print()">🖨️ Imprimir / PDF</button></div>
+</div></nav>
+
+<div class="hero"><div class="wrap hero-grid">
+<div>
+<span class="eyebrow">✅ Período 2026-09 confirmado • prioridade: Logística</span>
+<h1>Turnover de setembro em uma página</h1>
+<p class="sub">Base simulada com 30 pessoas (F001–F030). Leitura integral, sem amostragem. Headcount médio de <b>27</b> vindo de (30 inicial + 24 final) / 2. Números 100% rastreáveis até a base.</p>
+<p style="margin-top:12px;font-size:13px;color:#e0e7ff">🔒 Anonimizado • LGPD ok • Todas as 3 ações aprovadas — Logística primeiro</p>
+</div>
+<div class="big-num">
+<div style="font-size:13px;letter-spacing:.1em;opacity:.8">TURNOVER GERAL</div>
+<div class="n"><span data-count="22.22">0</span>%</div>
+<div class="d">6 desligados em setembro</div>
+<div style="margin-top:10px;font-size:13px;color:#e0e7ff">14,81% voluntário (4, vindo de 4/27) • 7,41% involuntário (2, vindo de 2/27)</div>
+</div>
+</div></div>
+
+<div class="kpis" id="kpis">
+<div class="card"><div class="lbl">👥 Headcount médio</div><div class="val">27</div><div class="src">30 → 24 • fonte: contagem direta da base</div></div>
+<div class="card"><div class="lbl">🚪 Desligados</div><div class="val">6</div><div class="src">F002, F003, F005, F008, F012, F025</div></div>
+<div class="card"><div class="lbl">🍼 Early ≤90d</div><div class="val" style="color:var(--amber)">2 casos</div><div class="src">77d + 58d • taxa oficial n/c (0 admissões em set)</div></div>
+<div class="card"><div class="lbl">🏦 Financeiro</div><div class="val" style="color:var(--green)">0%</div><div class="src">única área com zero saída — benchmark interno</div></div>
+</div>
+
+<main>
+<section class="card" id="areas">
+<h2>📍 Onde dói mais? Por área</h2>
+<p class="desc">Taxa = (desligados da área ÷ headcount médio da área) × 100. Valores vindos da quebra por <code>area</code>.</p>
+<div class="bars">
+<div class="row"><b>🚚 Logística</b><div class="track"><div class="fill hot" data-w="40"></div></div><b style="color:var(--red)">40,0%</b></div>
+<div class="row"><b>🧠 RH</b><div class="track"><div class="fill hot" data-w="40"></div></div><b style="color:var(--red)">40,0%</b></div>
+<div class="row"><span>🎧 Atendimento</span><div class="track"><div class="fill warn" data-w="18.18"></div></div><b>18,2%</b></div>
+<div class="row"><span>💻 TI</span><div class="track"><div class="fill warn" data-w="18.18"></div></div><b>18,2%</b></div>
+<div class="row"><span>🤝 Vendas</span><div class="track"><div class="fill warn" data-w="18.18"></div></div><b>18,2%</b></div>
+<div class="row"><span>🏦 Financeiro</span><div class="track"><div class="fill" data-w="0"></div></div><b style="color:var(--green)">0%</b></div>
+</div>
+<div class="note">💡 Leitura executiva: Logística tem volume (2 saídas em HM 5,0); RH tem taxa igual mas base pequena (1 em 2,5) — olhar com lupa antes de alarmar.</div>
+</section>
+
+<section class="card" id="cargos">
+<h2>🪑 Por cargo + motivo de saída</h2>
+<div class="cols">
+<div>
+<p class="desc">Cargos com saída em setembro:</p>
+<div class="bars">
+<div class="row"><b>Dev.</b><div class="track"><div class="fill hot" data-w="66.67"></div></div><b>66,7%</b></div>
+<div class="row"><span>Estagiário</span><div class="track"><div class="fill hot" data-w="40"></div></div><b>40%</b></div>
+<div class="row"><span>Analista</span><div class="track"><div class="fill warn" data-w="28.57"></div></div><b>28,6%</b></div>
+<div class="row"><span>Assistente</span><div class="track"><div class="fill warn" data-w="28.57"></div></div><b>28,6%</b></div>
+<div class="row"><span>Atendente</span><div class="track"><div class="fill warn" data-w="22.22"></div></div><b>22,2%</b></div>
+<div class="row"><span>Vendedor</span><div class="track"><div class="fill warn" data-w="22.22"></div></div><b>22,2%</b></div>
+</div>
+<p style="font-size:12px;color:var(--muted);margin-top:8px">Sem saída: auxiliar, conferente, suporte, supervisor (0%, vindo da contagem por cargo).</p>
+</div>
+<div>
+<p class="desc">Motivo + tenure dos 6 desligados:</p>
+<div class="donut-wrap">
+<svg width="150" height="150" viewBox="0 0 42 42"><circle cx="21" cy="21" r="15.9" fill="none" stroke="#f1f5f9" stroke-width="7"/><circle cx="21" cy="21" r="15.9" fill="none" stroke="#f59e0b" stroke-width="7" stroke-dasharray="66.7 33.3" stroke-dashoffset="25"/><circle cx="21" cy="21" r="15.9" fill="none" stroke="#2563eb" stroke-width="7" stroke-dasharray="33.3 66.7" stroke-dashoffset="-41.7"/><text x="21" y="23" text-anchor="middle" font-size="7" font-weight="800">4 × 2</text></svg>
+<div class="legend">
+<div><span class="dot" style="background:#f59e0b"></span><b>Voluntário 66,7%</b> — 4 pessoas (F002, F005, F008, F025)</div>
+<div><span class="dot" style="background:#2563eb"></span><b>Involuntário 33,3%</b> — 2 pessoas (F003, F012)</div>
+<div><span class="dot" style="background:#e11d48"></span><b>Early ≤90d:</b> 2 de 6 (F008 77d, F025 58d)</div>
+<div><span class="dot" style="background:#10b981"></span><b>Sênior &gt;365d:</b> 4 de 6 (819d, 1054d, 900d, 756d)</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="card">
+<h2>🚨 Top 3 críticos para o slide</h2>
+<p class="desc">O que você fala em 30 segundos na reunião:</p>
+<div class="alerts">
+<div class="alert a1"><div style="font-size:28px">🥇</div><b>Logística 40%</b><br><span style="font-size:13px">2 saídas em HM 5,0 • 1 voluntária + 1 involuntária</span></div>
+<div class="alert a2"><div style="font-size:28px">🥈</div><b>Estagiários 40%</b><br><span style="font-size:13px">1 saída early (58d, RH) em HM 2,5 • risco onboarding</span></div>
+<div class="alert a3"><div style="font-size:28px">🥉</div><b>Dev 66,7% ⚠️</b><br><span style="font-size:13px">1 saída em base n=2 • % inflado, mas impacto alto</span></div>
+</div>
+</section>
+
+<section class="card" id="acoes">
+<h2>✅ Plano aprovado — Logística primeiro ⭐</h2>
+<p class="desc">Período 2026-09 confirmado. Todas aprovadas, ordem de execução:</p>
+<div class="recs">
+<div class="rec" style="border:2px solid #e11d48"><header style="background:linear-gradient(135deg,#e11d48,#fb7185)">⭐ PRIORIDADE 1 • Logística em 15 dias 🔥</header><div class="body"><b>Semana 1:</b> entrevista padrão com roteiro p/ entender F002 (voluntário, 819d) e F003 (involuntário, 1054d — tenures vindas da base).<br><b>Semana 2:</b> auditoria de escala com remanescentes F001, F017, F018, F027 (4 ativos, número vindo da contagem da área).<br><span class="tag">Dono: Logística + RH • Meta: zero saída em out • Status: APROVADO</span></div></div>
+<div class="rec"><header style="background:linear-gradient(135deg,#d97706,#fbbf24)">2 • Onboarding 30/60/90 🍼</header><div class="body">Buddy + checkpoint para Atendimento e RH. Foco nos 6 admitidos em ago/26 (número vindo da contagem de admissões) ainda em risco early.<br><span class="tag">Dono: RH • Meta: early &lt; 10% em out • Status: APROVADO</span></div></div>
+<div class="rec"><header style="background:linear-gradient(135deg,#4f46e5,#38bdf8)">3 • Blindar TI 💻</header><div class="body">1:1 de retenção com dev remanescente + mapear conhecimento crítico de F012 (756d, número vindo da tenure).<br><span class="tag">Dono: Gestão TI • Meta: risco mapeado em 7 dias • Status: APROVADO</span></div></div>
+</div>
+<div class="note">✅ <b>Confirmado em 13/10:</b> período 2026-09 + todas as ações, Logística primeiro. Limite técnico: early oficial n/c (0 admissões em set → divisão por zero); % de dev inflado por n=2.</div>
+</section>
+
+<section class="card">
+<h2>📐 Metodologia (rodapé técnico)</h2>
+<table><tr><th>Métrica</th><th>Fórmula da skill</th><th>Resultado</th></tr>
+<tr><td>Headcount médio</td><td>(30 + 24) / 2</td><td>27</td></tr>
+<tr><td>Turnover geral</td><td>(6 / 27) × 100</td><td>22,22%</td></tr>
+<tr><td>Voluntário</td><td>(4 / 27) × 100</td><td>14,81%</td></tr>
+<tr><td>Involuntário</td><td>(2 / 27) × 100</td><td>7,41%</td></tr>
+<tr><td>Early 90d</td><td>(2 / 0) × 100</td><td>n/c — informativo 33,3% dos desligados</td></tr></table>
+</section>
+</main>
+<footer>Fonte única: <code>dados_simulados_turnover.csv</code> • Cálculos verificados em Python • Arquivo ilustrativo — rascunho, não é texto final • <span class="no-print">Dica: clique em Imprimir para salvar em PDF para a apresentação 💅</span></footer>
+<script>
+// anima barras + contador
+window.addEventListener('load',()=>{
+document.querySelectorAll('.fill').forEach(el=>{requestAnimationFrame(()=>el.style.width=el.dataset.w+'%')});
+let el=document.querySelector('[data-count]');let target=parseFloat(el.dataset.count);let t0=null;
+function step(t){if(!t0)t0=t;let p=Math.min((t-t0)/1200,1);el.textContent=(target*p).toFixed(2).replace('.',',');if(p<1)requestAnimationFrame(step)}requestAnimationFrame(step);
+});
+</script>
+</body>
+</html>
